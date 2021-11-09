@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  
+  <script src="stand.js"></script>
+  <script src="box.js"></script>
+  <script src="superman.js"></script>
+  
+</head>
+
+<body>
+
+  <a-scene background="color:#000000">
+
+    <a-camera position="0 0 5">
+
+    </a-camera>
+
+    <a-assets>      
+
+      <a-asset-item id="superman-obj" src="./Superman/tinker.obj"></a-asset-item> 
+        <a-asset-item id="superman-mtl" src="./Superman/obj.mtl"></a-asset-item>
+      </a-assets>
+
+
+
+
+    <a-entity log="message: Hi, it's me!"></a-entity>
+
+    <a-entity position = "0 0 0" rotation = "0 0 0" box-mover>
+      <a-box></a-box>
+
+    </a-entity>
+
+    <a-entity obj-model="obj: #superman-obj; mtl: #superman-mtl" position="1 1 1" rotation="-90 -90 0" scale="0.09 0.09 0.09" super-force></a-entity>
+    
+      <!--Earth--> 
+      <a-entity position="0 0 0" rotation="0 0 0" animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 1000000"> 
+        <a-sphere position="0 -10 10" radius="10" src="https://cdn.glitch.com/850dd813-e5e9-4dd0-9751-38981ae74172%2Fearth.jpg?v=1604312404511"> </a-sphere> 
+      </a-entity>
+
+      <a-entity>
+      <a-cylinder id="part2" position="1 1 1" color="orange" radius="0.75" height="2" super-force></a-cylinder>
+    </a-entity>
+    
+
+  </a-scene>
+
+</body>
+
+</html>
+
